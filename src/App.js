@@ -43,8 +43,8 @@ function App() {
           <Navbar brand_name="Learning React" about="About Us" toggleMode={toggleMode} mode={mode}/>
           <Alert alert={alert}/>
           <Routes>
-            <Route exact path='/' element={<TextForm showAlert={showAlert} alert={alert} heading="Enter the text to analze" mode={mode} />} />
-            <Route exact path='/about' element={<About/>} />
+            <Route exact path='/textutils/' element={<TextForm showAlert={showAlert} alert={alert} heading="Enter the text to analze" mode={mode} />} />
+            <Route exact path='/textutils/about' element={<About/>} />
           </Routes>
     </Router>
   );

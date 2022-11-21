@@ -13,10 +13,10 @@ export default function Navbar(props) {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
+            <Link className="nav-link" to="/textutils/">Home <span className="sr-only">(current)</span></Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/about">{props.about}</Link>
+            <Link className="nav-link" to="/textutils/about">{props.about}</Link>
           </li>
         </ul>
         <div className={`custom-control custom-switch text-${props.mode==='light'?'dark':'light'}`}>
