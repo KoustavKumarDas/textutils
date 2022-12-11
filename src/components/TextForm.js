@@ -43,10 +43,10 @@ export default function TextForm(props) {
                     <div className="form-group">
                         <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="8" style={{backgroundColor: props.mode==='dark'?'black':'white',color: props.mode==='dark'?'white':'black'}}></textarea>
                     </div>
-                    <button type="button" className={`btn btn-${props.mode==='dark'?'dark':'primary'} m-1`} onClick={handleUpClick}>Convert To Uppercase</button>
-                    <button type="button" className={`btn btn-${props.mode==='dark'?'dark':'primary'} m-1`} onClick={handleLowClick}>Convert To Lowercase</button>
-                    <button type="button" className={`btn btn-${props.mode==='dark'?'dark':'primary'} m-1`} onClick={handleClear}>Clear Text</button>
-                    <button type="button" className={`btn btn-${props.mode==='dark'?'dark':'primary'} m-1`} onClick={handleAlternate}>Alternating Text</button>
+                    <button disabled={text.length===0} type="button" className={`btn btn-${props.mode==='dark'?'dark':'primary'} m-1`} onClick={handleUpClick}>Convert To Uppercase</button>
+                    <button disabled={text.length===0} type="button" className={`btn btn-${props.mode==='dark'?'dark':'primary'} m-1`} onClick={handleLowClick}>Convert To Lowercase</button>
+                    <button disabled={text.length===0} type="button" className={`btn btn-${props.mode==='dark'?'dark':'primary'} m-1`} onClick={handleClear}>Clear Text</button>
+                    <button disabled={text.length===0} type="button" className={`btn btn-${props.mode==='dark'?'dark':'primary'} m-1`} onClick={handleAlternate}>Alternating Text</button>
 
                 </form>
             </div>
@@ -55,7 +55,7 @@ export default function TextForm(props) {
                 <p className="font-weight-bold mb-0">The text is</p>
                 <p>{text===''?'Enter text to preview':text}</p>
                 <p className="font-weight-bold mb-0">Character count is</p>
-                <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters</p>
+                <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters</p>
                 <p className="font-weight-bold mb-0">Time required to read</p>
                 <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes Read</p>
             </div>
